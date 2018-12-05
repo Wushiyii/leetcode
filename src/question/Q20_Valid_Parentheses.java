@@ -1,0 +1,35 @@
+package question;
+
+import java.util.HashMap;
+import java.util.Stack;
+
+public class Q20_Valid_Parentheses {
+
+    private HashMap<Character, Character> mappings;
+
+    private Q20_Valid_Parentheses() {
+        this.mappings = new HashMap<>();
+        this.mappings.put(')', '(');
+        this.mappings.put('}', '{');
+        this.mappings.put(']', '[');
+    }
+
+    private boolean isValid(String s) {
+
+        Stack<Character> stack = new Stack<>();
+
+        for (int i = 0; i < s.length(); i++) {
+            char c = s.charAt(i);
+
+            if (this.mappings.containsKey(c)) {
+                Character topEle = stack.empty() ? '#' : stack.pop();
+                if (topEle != this.mappings.get(c)) {
+                    return false;
+                }
+            } else {
+                stack.push(c);
+            }
+        }
+        return stack.isEmpty();
+    }
+}
