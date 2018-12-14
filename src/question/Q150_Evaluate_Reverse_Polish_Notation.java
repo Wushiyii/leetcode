@@ -1,7 +1,5 @@
 package question;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Stack;
 
 public class Q150_Evaluate_Reverse_Polish_Notation {
