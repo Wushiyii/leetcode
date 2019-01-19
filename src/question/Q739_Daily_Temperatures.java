@@ -22,6 +22,21 @@ public class Q739_Daily_Temperatures {
 
     }
 
+    public int[] dailyTemperatures2(int[] T) {
+        int[] stack = new int[T.length];
+        int[] res = new int[T.length];
+        int top = -1;
+
+        for (int i = 0; i < T.length; i++) {
+            while (top > -1 && T[stack[top]] < T[i]) {
+                int cur = stack[top --];
+                res[cur] = i - cur;
+            }
+            stack[++top] = i;
+        }
+        return res;
+
+    }
 
 
 
