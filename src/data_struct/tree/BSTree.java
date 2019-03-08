@@ -91,4 +91,43 @@ public class BSTree<T extends Comparable<T>> {
         return iterativeSearch(root,key);
     }
 
+    private BSNode<T> maximum(BSNode<T> node) {
+        if (node == null) return null;
+        while (node.right != null) {
+            node = node.right;
+        }
+        return node;
+    }
+
+    public T maxinmum() {
+        BSNode<T> maximum = maximum(root);
+        return maximum == null?null:maximum.key;
+    }
+
+    private BSNode<T> minimum(BSNode<T> node) {
+        if (node == null) return null;
+        while (node.left != null) {
+            node = node.left;
+        }
+        return node;
+    }
+    public T minimum() {
+        BSNode<T> minimum = minimum(root);
+        return minimum == null?null:minimum.key;
+    }
+
+    public BSNode<T> predecessor(BSNode<T> node) {
+        if (node.left != null) {
+            return maximum(node.left);
+        }
+        return null;
+    }
+    public BSNode<T> successor(BSNode<T> node) {
+        if (node.right != null) {
+            return minimum(node.right);
+        }
+        return null;
+    }
+
+
 }
