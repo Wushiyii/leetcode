@@ -1,6 +1,6 @@
 package question;
 
-public class Q7_Reverce_Integer {
+public class Q7_Reverse_Integer {
 
     public static int reverse(int x) {
         int current = 0;
