@@ -1,4 +1,4 @@
-package base.Annotation;
+package base.Annotation.SQL;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
